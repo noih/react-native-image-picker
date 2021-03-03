@@ -131,8 +131,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
             callback.invoke(getErrorMap(errOthers, "Uri error"));
             return;
         }
-        Uri newUri = resizeImage(uri, reactContext, options);
-        callback.invoke(getResponseMap(newUri, options, reactContext));
+        callback.invoke(getResponseMap(uri, options, reactContext));
     }
 
     void onVideoObtained(Uri uri) {
@@ -163,7 +162,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
                 break;
 
             case REQUEST_LAUNCH_IMAGE_LIBRARY:
-                onImageObtained(getAppSpecificStorageUri(data.getData(), reactContext));
+                onImageObtained(data.getData());
                 break;
 
             case REQUEST_LAUNCH_VIDEO_LIBRARY:
