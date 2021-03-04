@@ -1,21 +1,12 @@
 {
+  "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "lib": ["ES6"],
-    "allowJs": true,
-    "jsx": "react-native",
-    "isolatedModules": true,
+    "target": "es5",
+    "module": "commonjs",
     "strict": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "lib": ["es2015", "es2016", "esnext"],
+    "jsx": "react-native"
   },
-  "exclude": [
-    "example",
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
-  ]
+  "exclude": ["node_modules"]
 }
